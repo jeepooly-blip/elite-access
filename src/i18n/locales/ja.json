@@ -1,0 +1,19 @@
+{
+  "nav": {
+    "home": "ホーム",
+    "experiences": "体験",
+    "events": "イベント",
+    "contact": "お問い合わせ",
+    "bookNow": "予約する"
+  },
+  "hero": {
+    "title": "VELOCE コンシェルジュ",
+    "subtitle": "世界で最も権威のあるイベントへの独占VIPアクセス",
+    "cta": "ラグジュアリーを発見"
+  },
+  "footer": {
+    "rights": "全著作権所有",
+    "privacy": "プライバシーポリシー",
+    "terms": "利用規約"
+  }
+}

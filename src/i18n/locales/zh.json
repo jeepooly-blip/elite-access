@@ -1,0 +1,19 @@
+{
+  "nav": {
+    "home": "首页",
+    "experiences": "体验",
+    "events": "活动",
+    "contact": "联系我们",
+    "bookNow": "立即预订"
+  },
+  "hero": {
+    "title": "VELOCE 礼宾服务",
+    "subtitle": "独家 VIP 通道，通往世界最负盛名的活动",
+    "cta": "探索奢华"
+  },
+  "footer": {
+    "rights": "版权所有",
+    "privacy": "隐私政策",
+    "terms": "服务条款"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "nav": {
+    "home": "Home",
+    "experiences": "Esperienze",
+    "events": "Eventi",
+    "contact": "Contatto",
+    "bookNow": "Prenota"
+  },
+  "hero": {
+    "title": "VELOCE Concierge",
+    "subtitle": "Accesso VIP Esclusivo agli Eventi Più Prestigiosi al Mondo",
+    "cta": "Scopri il Lusso"
+  },
+  "footer": {
+    "rights": "Tutti i diritti riservati",
+    "privacy": "Informativa sulla Privacy",
+    "terms": "Termini di Servizio"
+  }
+}
