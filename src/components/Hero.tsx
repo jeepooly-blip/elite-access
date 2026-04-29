@@ -89,15 +89,15 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* Main Title */}
-            <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 animate-slide-up">
-              <span className="block text-white leading-tight">
+            {/* Main Title - Using Playfair Display (serif font) */}
+            <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 animate-slide-up text-white">
+              <span className="block leading-tight">
                 {heroSlides[currentSlide].title}
               </span>
             </h1>
 
             {/* Description */}
-            <p className="text-lg md:text-xl text-luxury-platinum/90 mb-10 max-w-xl animate-fade-in" style={{ animationDelay: '0.3s' }}>
+            <p className="text-lg md:text-xl text-luxury-platinum/90 mb-10 max-w-xl animate-fade-in font-light" style={{ animationDelay: '0.3s' }}>
               {heroSlides[currentSlide].description}
             </p>
 
@@ -109,7 +109,7 @@ const Hero = () => {
               </button>
               <button
                 onClick={() => setIsVideoPlaying(true)}
-                className="group px-8 py-4 border border-luxury-gold/50 text-luxury-gold font-medium tracking-wide rounded-full hover:bg-luxury-gold/10 transition-all duration-300 flex items-center justify-center space-x-3"
+                className="group px-8 py-4 border border-luxury-gold/50 text-luxury-gold font-medium tracking-wide rounded-full hover:bg-luxury-gold/10 transition-all duration-300 flex items-center justify-center space-x-3 cursor-pointer"
               >
                 <Play className="w-5 h-5" />
                 <span>Watch Experience</span>
@@ -144,9 +144,9 @@ const Hero = () => {
 
       {/* Video Modal */}
       {isVideoPlaying && (
-        <div className="fixed inset-0 z-50 bg-luxury-black/95 flex items-center justify-center" onClick={() => setIsVideoPlaying(false)}>
+        <div className="fixed inset-0 z-[500] bg-luxury-black/95 flex items-center justify-center cursor-pointer" onClick={() => setIsVideoPlaying(false)}>
           <button
-            className="absolute top-8 right-8 text-white hover:text-luxury-gold transition-colors"
+            className="absolute top-8 right-8 text-white hover:text-luxury-gold transition-colors cursor-pointer"
             onClick={() => setIsVideoPlaying(false)}
           >
             <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">

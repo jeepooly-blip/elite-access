@@ -93,81 +93,82 @@ const LuxuryExperiences = () => {
           </p>
         </div>
 
-        {/* Experience Cards */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-24">
+        {/* Experience Cards - Top Row */}
+        <div className="grid lg:grid-cols-2 gap-8 mb-8">
           {experiences.slice(0, 2).map((exp, index) => (
             <div
               key={exp.id}
-              className={`group relative overflow-hidden rounded-2xl transition-all duration-1000 cursor-pointer ${
+              className={`group relative overflow-hidden rounded-2xl transition-all duration-1000 cursor-pointer h-[400px] lg:h-[450px] ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
               style={{ transitionDelay: `${index * 200 + 300}ms` }}
               onMouseEnter={() => setActiveExperience(exp.id - 1)}
             >
-              <div className="relative h-[400px] lg:h-[500px]">
+              <div className="absolute inset-0">
                 <img
                   src={exp.image}
                   alt={exp.title}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-luxury-black via-luxury-black/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-luxury-black via-luxury-black/60 to-transparent" />
+              </div>
 
-                {/* Content */}
-                <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                  <div className="w-12 h-12 rounded-xl bg-luxury-gold/20 backdrop-blur-sm flex items-center justify-center mb-4">
-                    <exp.icon className="w-6 h-6 text-luxury-gold" />
-                  </div>
-                  <span className="text-luxury-gold text-sm tracking-wide mb-2">{exp.subtitle}</span>
-                  <h3 className="font-serif text-3xl font-bold text-white mb-4">{exp.title}</h3>
-                  <p className="text-luxury-platinum/80 mb-6 line-clamp-2">{exp.description}</p>
-
-                  <div className="flex flex-wrap gap-3 mb-6">
-                    {exp.features.slice(0, 3).map((feature, i) => (
-                      <span key={i} className="px-3 py-1 bg-luxury-gold/10 text-luxury-gold text-xs rounded-full">
-                        {feature}
-                      </span>
-                    ))}
-                  </div>
-
-                  <button className="inline-flex items-center text-luxury-gold font-medium group/btn">
-                    <span>Explore</span>
-                    <ArrowRight className="w-4 h-4 ml-2 transform group-hover/btn:translate-x-1 transition-transform" />
-                  </button>
+              {/* Content */}
+              <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                <div className="w-14 h-14 rounded-xl bg-luxury-gold/20 backdrop-blur-sm flex items-center justify-center mb-4">
+                  <exp.icon className="w-7 h-7 text-luxury-gold" />
                 </div>
+                <span className="text-luxury-gold text-sm tracking-wider uppercase mb-2">{exp.subtitle}</span>
+                <h3 className="font-serif text-3xl lg:text-4xl font-bold text-white mb-3">{exp.title}</h3>
+                <p className="text-luxury-platinum/80 mb-5 line-clamp-2 leading-relaxed">{exp.description}</p>
+
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {exp.features.slice(0, 3).map((feature, i) => (
+                    <span key={i} className="px-3 py-1 bg-luxury-gold/15 text-luxury-gold text-xs rounded-full">
+                      {feature}
+                    </span>
+                  ))}
+                </div>
+
+                <button className="inline-flex items-center text-luxury-gold font-medium group/btn">
+                  <span>Explore</span>
+                  <ArrowRight className="w-5 h-5 ml-2 transform group-hover/btn:translate-x-2 transition-transform" />
+                </button>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Secondary Experience Cards */}
+        {/* Secondary Experience Cards - Bottom Row */}
         <div className="grid md:grid-cols-2 gap-8 mb-24">
           {experiences.slice(2, 4).map((exp, index) => (
             <div
               key={exp.id}
-              className={`group relative overflow-hidden rounded-2xl transition-all duration-1000 cursor-pointer ${
+              className={`group relative overflow-hidden rounded-2xl transition-all duration-1000 cursor-pointer h-[320px] ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
               style={{ transitionDelay: `${index * 200 + 500}ms` }}
             >
-              <div className="relative h-[300px]">
+              <div className="absolute inset-0">
                 <img
                   src={exp.image}
                   alt={exp.title}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-luxury-black via-luxury-black/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-luxury-black via-luxury-black/50 to-transparent" />
+              </div>
 
-                <div className="absolute inset-0 p-6 flex flex-col justify-end">
-                  <div className="w-10 h-10 rounded-lg bg-luxury-gold/20 backdrop-blur-sm flex items-center justify-center mb-3">
-                    <exp.icon className="w-5 h-5 text-luxury-gold" />
-                  </div>
-                  <span className="text-luxury-gold text-xs tracking-wide mb-1">{exp.subtitle}</span>
-                  <h3 className="font-serif text-2xl font-bold text-white mb-2">{exp.title}</h3>
-                  <button className="inline-flex items-center text-luxury-gold text-sm font-medium group/btn">
-                    <span>Discover</span>
-                    <ChevronRight className="w-4 h-4 ml-1 transform group-hover/btn:translate-x-1 transition-transform" />
-                  </button>
+              <div className="absolute inset-0 p-6 lg:p-8 flex flex-col justify-end">
+                <div className="w-12 h-12 rounded-lg bg-luxury-gold/20 backdrop-blur-sm flex items-center justify-center mb-4">
+                  <exp.icon className="w-6 h-6 text-luxury-gold" />
                 </div>
+                <span className="text-luxury-gold text-xs tracking-wider uppercase mb-2">{exp.subtitle}</span>
+                <h3 className="font-serif text-2xl lg:text-3xl font-bold text-white mb-3">{exp.title}</h3>
+                <p className="text-luxury-platinum/80 mb-5 text-sm line-clamp-2">{exp.description}</p>
+                <button className="inline-flex items-center text-luxury-gold text-sm font-medium group/btn">
+                  <span>Discover</span>
+                  <ChevronRight className="w-4 h-4 ml-1 transform group-hover/btn:translate-x-1 transition-transform" />
+                </button>
               </div>
             </div>
           ))}
@@ -188,28 +189,28 @@ const LuxuryExperiences = () => {
             {destinations.map((dest, index) => (
               <div
                 key={dest.name}
-                className="group relative overflow-hidden rounded-xl cursor-pointer"
+                className="group relative overflow-hidden rounded-xl cursor-pointer h-48"
                 style={{ transitionDelay: `${index * 50 + 800}ms` }}
               >
-                <div className="relative h-40">
+                <div className="absolute inset-0">
                   <img
                     src={dest.image}
                     alt={dest.name}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-luxury-black/80 to-transparent" />
-
-                  <div className="absolute inset-0 flex flex-col justify-end p-3">
-                    <div className="flex items-center space-x-1 text-luxury-gold mb-1">
-                      <MapPin className="w-3 h-3" />
-                      <span className="text-xs">{dest.name}</span>
-                    </div>
-                    <p className="text-white text-sm font-medium">{dest.event}</p>
-                  </div>
-
-                  {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-luxury-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-luxury-black/90 via-luxury-black/30 to-transparent" />
                 </div>
+
+                <div className="absolute inset-0 flex flex-col justify-end p-4">
+                  <div className="flex items-center space-x-1 text-luxury-gold mb-2">
+                    <MapPin className="w-3 h-3" />
+                    <span className="text-xs font-medium">{dest.name}</span>
+                  </div>
+                  <p className="text-white text-sm font-semibold">{dest.event}</p>
+                </div>
+
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 bg-luxury-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             ))}
           </div>
@@ -220,7 +221,7 @@ const LuxuryExperiences = () => {
           <p className="text-luxury-platinum/70 mb-6">
             Ready to create your bespoke luxury experience?
           </p>
-          <button className="group inline-flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-luxury-gold to-luxury-champagne text-luxury-black font-semibold tracking-wide rounded-full hover:shadow-gold transition-all duration-300 transform hover:scale-105">
+          <button className="group inline-flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-luxury-gold to-luxury-champagne text-luxury-black font-semibold tracking-wide rounded-full hover:shadow-gold transition-all duration-300 transform hover:scale-105 cursor-pointer">
             <Globe className="w-5 h-5" />
             <span>Plan Your Experience</span>
             <ArrowRight className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" />
